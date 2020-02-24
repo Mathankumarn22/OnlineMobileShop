@@ -1,0 +1,35 @@
+﻿@model OnlineMobileShop.Entity.Account
+
+@{
+    ViewBag.Title = "Login";
+}
+<center>
+    @using.BeignForm("Login","Account",FormMethod.Post)
+    {
+    <h2>Login</h2>
+    <table>
+        <tr>
+            <td>
+                @Html.Label("MailID", "Mail ID")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.MailID)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Password")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="login" />
+            </td>
+        </tr>
+    </table>
+    }
+
+</center>
