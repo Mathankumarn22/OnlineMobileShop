@@ -56,5 +56,10 @@ namespace OnlineMobileShop.Respository
             }
             return false;
         }
+        public List<Account> GetUser()
+        {
+            DBContext dBContext = new DBContext();
+            return dBContext.account.ToList();
+        }
     }
 }

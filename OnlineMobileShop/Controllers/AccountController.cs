@@ -45,5 +45,11 @@ namespace OnlineMobileShop.Controllers
                 return View();
             }
         }
+        public ActionResult DisplayUserDetails()
+        {
+            UserRespo userRespo = new UserRespo();
+            List<Account> UserDetails = userRespo.GetUser();
+            return View(UserDetails);
+        }
     }   
 }

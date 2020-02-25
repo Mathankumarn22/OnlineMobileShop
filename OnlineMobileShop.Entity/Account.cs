@@ -6,7 +6,7 @@ namespace OnlineMobileShop.Entity
 {
     public class Account
     {
-   
+        [Key]
         public int UserID { get; set; }
 
 
@@ -17,7 +17,6 @@ namespace OnlineMobileShop.Entity
         public string Name { get; set; }
 
         [DisplayName("Mobile Number")]
-        [MaxLength(10)]
         [Required(ErrorMessage = "Please enter your phone number")]
         [RegularExpression(@"^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}", ErrorMessage = "Please enter your number")]
         public long PhoneNumber { get; set; }
