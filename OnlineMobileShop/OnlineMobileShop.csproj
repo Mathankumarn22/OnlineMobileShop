@@ -152,6 +152,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LogIn.cs" />
+    <Compile Include="Models\SignUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,13 +170,11 @@
     <Content Include="Views\Mobile\Edit.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Shared\Master.cshtml">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Views\Shared\Master.cshtml" />
     <Content Include="Views\Mobile\RunMaster.cshtml" />
     <Content Include="Views\Shared\_Mobile.cshtml" />
     <Content Include="Views\Account\DisplayUserDetails.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -184,7 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>

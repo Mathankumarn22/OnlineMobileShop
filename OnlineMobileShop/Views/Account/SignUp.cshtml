@@ -1,4 +1,4 @@
-﻿@model OnlineMobileShop.Entity.Account
+﻿@model OnlineMobileShop.Models.SignUp
 
 @{
     ViewBag.Title = "SignUp";
@@ -16,7 +16,7 @@
 
             <tr>
                 <td>
-                    @Html.LabelFor(Model => Model.Name)
+                    @Html.LabelFor(model=>model.Name)
                 </td>
                 <td>
                     @Html.TextBoxFor(Model => Model.Name)

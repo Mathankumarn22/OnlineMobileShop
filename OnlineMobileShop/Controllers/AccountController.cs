@@ -1,4 +1,5 @@
 ﻿using OnlineMobileShop.Entity;
+using OnlineMobileShop.Models;
 using OnlineMobileShop.Respository;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,20 @@ namespace OnlineMobileShop.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignUp(Account account)
+        public ActionResult SignUp(SignUp signUp)
         {
-            if (ModelState.IsValid ) 
-            {
+            Account account = new Account();
+            //if (ModelState.IsValid ) 
+            //{
+                account.Name = signUp.Name;
+                account.PhoneNumber = signUp.PhoneNumber;
+                account.Gender = signUp.Gender;
+                account.MailID = signUp.MailID;
+                account.Password = signUp.Password;
                 UserRespo.Add(account);
                 return RedirectToAction("LogIn");
-            }
-            return View();
+            //}
+            //return View();
         }
         public ActionResult Login()
         {
@@ -36,14 +43,15 @@ namespace OnlineMobileShop.Controllers
         [HttpPost]
         public ActionResult Login([Bind(Include = "MailID, Password")]Account account)
         {
-            if(UserRespo.Login(account.MailID, account.Password))
-            {
-                return RedirectToAction("DisplayDetails", "Mobile");
-            }
-            else
-            {
-                return View();
-            }
+            //if(UserRespo.Login(account.MailID, account.Password))
+            //{
+            //    return RedirectToAction("DisplayDetails", "Mobile");
+            //}
+            //else
+            //{
+            //    return View();
+            //}
+            return View();
         }
         public ActionResult DisplayUserDetails()
         {
