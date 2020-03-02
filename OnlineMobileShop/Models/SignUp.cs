@@ -30,14 +30,12 @@ namespace OnlineMobileShop.Models
         [DisplayName("Mail ID")]
         [MaxLength(35)]
         [Required(ErrorMessage = "Please enter your mail")]
-
         [EmailAddress(ErrorMessage = "Please enter valid mail")]
         public string MailID { get; set; }
 
         [DisplayName("Password")]
         [MaxLength(15)]
         [Required(ErrorMessage = "Please enter your password")]
-
         [RegularExpression("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$", ErrorMessage = "Please enter valid password like uppercase,lowecase,symbol and number")]
         [MinLength(8, ErrorMessage = "Password should atleast contain 8 characters")]
         public string Password { get; set; }

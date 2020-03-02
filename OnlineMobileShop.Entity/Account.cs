@@ -20,11 +20,7 @@ namespace OnlineMobileShop.Entity
 
         public string Password { get; set; }
 
-        public string ConfirmPassword { get; set; }
-        public Account()
-        {
-
-        }
+        
     }
     public enum Gender
     {

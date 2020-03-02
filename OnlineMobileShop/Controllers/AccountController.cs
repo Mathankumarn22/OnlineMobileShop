@@ -24,8 +24,8 @@ namespace OnlineMobileShop.Controllers
         public ActionResult SignUp(SignUp signUp)
         {
             Account account = new Account();
-            //if (ModelState.IsValid ) 
-            //{
+            if (ModelState.IsValid ) 
+            {
                 account.Name = signUp.Name;
                 account.PhoneNumber = signUp.PhoneNumber;
                 account.Gender = signUp.Gender;
@@ -33,8 +33,8 @@ namespace OnlineMobileShop.Controllers
                 account.Password = signUp.Password;
                 UserRespo.Add(account);
                 return RedirectToAction("LogIn");
-            //}
-            //return View();
+            }
+            return View();
         }
         public ActionResult Login()
         {

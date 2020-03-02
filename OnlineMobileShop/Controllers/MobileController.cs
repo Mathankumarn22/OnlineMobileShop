@@ -33,36 +33,47 @@ namespace OnlineMobileShop.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create_post()
+        public ActionResult Create_post(Mobile mobile)
         {
-            Mobile mobile = new Mobile();
-            UpdateModel<Mobile>(mobile);
-            repository.Add(mobile);
-            TempData["Message"] = "Added";
-            return RedirectToAction("MobileDetails");
+            Mobile mobiles = new Mobile();
+            if (ModelState.IsValid)
+            {
+                mobile.Brand = mobile.Brand;
+                mobile.Model = mobile.Model;
+                mobile.Battery = mobile.Battery;
+                mobile.RAM = mobile.RAM;
+                mobile.ROM = mobile.ROM;
+                mobile.Price = mobile.Price;
+                if(MobileRespository.Add(mobile)>0)
+                {
+                    ViewBag.message = "Successfull";
+                }
+                ViewBag.message = "falied";
+            }
+            return View();
         }
-        [HttpGet]
-        public ActionResult Edit(int id)
-        {
-            Mobile mobile = MobileRespository.GetMobileID(id);
-            return View(mobile);
-        }
-        [HttpGet]
-        public ActionResult Delete(int id)
-        {
-            MobileRespository.Delete(id);
-            return RedirectToAction("MobileDetails");
-        }
-        [HttpPost]
-        public ActionResult Update()
-        {
-            Mobile mobile = new Mobile();
-            TryUpdateModel<Mobile>(mobile);
-            MobileRespository.Update(mobile);
-            return RedirectToAction("MobileDetails");
+        //[HttpGet]
+        //public ActionResult Edit(int id)
+        //{
+        //    Mobile mobile = MobileRespository.GetMobileID(id);
+        //    return View(mobile);
+        //}
+        //[HttpGet]
+        //public ActionResult Delete(int id)
+        //{
+        //    MobileRespository.Delete(id);
+        //    return RedirectToAction("MobileDetails");
+        //}
+        //[HttpPost]
+        //public ActionResult Update()
+        //{
+        //    Mobile mobile = new Mobile();
+        //    TryUpdateModel<Mobile>(mobile);
+        //    MobileRespository.Update(mobile);
+        //    return RedirectToAction("MobileDetails");
 
 
-        }
+        //}
 
     }
 }

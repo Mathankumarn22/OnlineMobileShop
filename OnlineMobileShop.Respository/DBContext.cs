@@ -16,5 +16,6 @@ namespace OnlineMobileShop.Respository
 
         }
         public DbSet<Account> account { get; set; }
+        public DbSet<Mobile> mobile { get; set; }
     }
 }

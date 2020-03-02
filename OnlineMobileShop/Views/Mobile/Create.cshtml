@@ -1,7 +1,7 @@
-﻿@model OnlineMobileShop.Entity.Mobile
+﻿@model OnlineMobileShop.Models.AddMobiles
 
 @{
-    ViewBag.Title = "DisplayDetails";
+    ViewBag.Title = "AddMobiles";
 }
 
 @Html.ActionLink("Add new details", "Create")
@@ -17,14 +17,7 @@
 @using (Html.BeginForm("Create_post", "Mobile", FormMethod.Post))
 {
 <table>
-    <tr>
-        <td>
-            @Html.Label("MobileId")
-        </td>
-        <td>
-            @Html.TextBoxFor(Model => Model.MobileID)
-        </td>
-    </tr>
+    
     <tr>
         <td>
             @Html.Label("Brand")
@@ -34,7 +27,6 @@
         </td>
     </tr>
 
-
     <tr>
         <td>
             @Html.Label("Model")
@@ -43,6 +35,7 @@
             @Html.TextBoxFor(Model => Model.Model)
         </td>
     </tr>
+
     <tr>
         <td>
             @Html.Label("Battery")
@@ -53,12 +46,29 @@
     </tr>
     <tr>
         <td>
+            @Html.Label("RAM")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.RAM)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("ROM")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.ROM)
+        </td>
+    </tr>
+    <tr>
+        <td>
             @Html.Label("Price")
         </td>
         <td>
             @Html.TextBoxFor(Model => Model.Price)
         </td>
     </tr>
+
     <tr>
         <td>
             @Html.ActionLink("Back", "DisplayDetails")
